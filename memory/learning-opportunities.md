@@ -38,8 +38,8 @@
 
 ## 推荐安装 (≥70 分)
 
-1. **wechat-article-publisher** - 微信公众号文章发布
-2. **restart-continuity** - 重启安全恢复和任务持久化
+1. **wechat-article-publisher** - 微信公众号文章发布 ✅ 已安装
+2. **restart-continuity** - 重启安全恢复和任务持久化 ✅ 已安装
 
 ---
 
@@ -56,6 +56,8 @@ _(由心跳检查自动填充)_
 | obsidian | 2026-03-06 | 中 | 8/10 |
 | searxng | 2026-03-06 | 高 | 9/10 |
 | proactive-agent | 2026-03-06 | 中 | 9/10 |
+| wechat-article-publisher | 2026-03-08 | 待观察 | 7/10 |
+| restart-continuity | 2026-03-08 | 待观察 | 7/10 |
 
 ---
 
