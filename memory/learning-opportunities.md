@@ -19,6 +19,30 @@
 
 ## 待评估技能
 
+### 2026-03-08 扫描发现
+
+| 技能 | 来源 | 用途 | 实用性 | 安全性 | 频率 | 创新性 | 加权分 | 建议 |
+|------|------|------|--------|--------|------|--------|--------|------|
+| clawplay-skill | GitHub | AI 扑克游戏 | 3 | 7 | 2 | 8 | 45 | ❌ 低优先级 |
+| game-writing-copilot | GitHub | 游戏写作辅助 | 5 | 7 | 3 | 7 | 55 | ❌ 暂不安装 |
+| wechat-article-publisher | GitHub | 微信公众号发布 | 8 | 6 | 6 | 6 | **72** | ✅ **推荐安装** |
+| github-publish-skill | GitHub | GitHub 技能发布 | 6 | 7 | 4 | 6 | 61 | ⏳ 观察 |
+| restart-continuity | GitHub | 重启后任务恢复 | 7 | 7 | 5 | 7 | **71** | ✅ **推荐安装** |
+| ppt-deck-builder | GitHub | PPT 生成 | 6 | 7 | 4 | 6 | 61 | ⏳ 观察 |
+
+**评分说明:**
+- **wechat-article-publisher**: 如果你用微信公众号，非常实用 (8/10)，加权分 72
+- **restart-continuity**: 重启后恢复任务，对长期运行有用 (7/10)，加权分 71
+
+---
+
+## 推荐安装 (≥70 分)
+
+1. **wechat-article-publisher** - 微信公众号文章发布
+2. **restart-continuity** - 重启安全恢复和任务持久化
+
+---
+
 _(由心跳检查自动填充)_
 
 ---
