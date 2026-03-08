@@ -148,6 +148,21 @@ _(由心跳检查自动填充)_
 | 19:01 | notion | 70 | ⏳ 待安装 |
 | 19:01 | docker-essentials | 70 | ⏳ 待安装 |
 
+### 2026-03-08 第五次扫描 (19:58 手动)
+
+| 技能 | 来源 | 用途 | 实用性 | 安全性 | 频率 | 创新性 | 加权分 | 建议 |
+|------|------|------|--------|--------|------|--------|--------|------|
+| openclaw-projects | GitHub | Postgres 项目管理 | 7 | 7 | 6 | 6 | **70** | ✅ **推荐安装** |
+| openclaw-dashboard | GitHub | 实时监控面板 | 6 | 7 | 5 | 7 | **68** | ⏳ 观察 |
+| reflectt-node | GitHub | AI 团队协调 | 6 | 6 | 5 | 8 | **67** | ⏳ 观察 |
+| openclaw-session-viewer | GitHub | 会话可视化 | 5 | 7 | 4 | 7 | 62 | ⏳ 观察 |
+| codex-gateway | GitHub | Codex CLI 网关 | 6 | 6 | 5 | 6 | 64 | ⏳ 观察 |
+| Clawdian | GitHub | Obsidian 插件 | 6 | 7 | 5 | 6 | 66 | ⏳ 观察 |
+
+**高价值发现:**
+- **openclaw-projects** (70分): Postgres 项目管理，工作图、任务依赖、仪表板
+- **openclaw-dashboard** (68分): 实时监控面板，接近阈值
+
 ---
 
-_最后更新：2026-03-08 18:45_
+_最后更新：2026-03-08 19:58_
