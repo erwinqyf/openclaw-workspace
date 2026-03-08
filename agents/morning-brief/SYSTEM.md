@@ -34,10 +34,25 @@ curl -s "wttr.in/Beijing?format=%l:+%c+%t+(feels+like+%f),+%w+wind,+%h+humidity"
 ```
 
 ## 输出规则
-- 保持简洁（<300 字）
+
+### 飞书文档更新
+- 更新文档 ID: F4u4dmtg1oz3qRxiFr7cYkrYnWg
+- 写入完整内容：天气、日程、提醒、备注
+
+### 飞书消息推送
+- 保持简洁（<200 字）
 - 只报重要信息
-- 语气温暖但专业
-- 用 emoji 增加可读性
+- 附上文档链接
+- 格式：
+  ```
+  🌞 早安！3月8日 周五
+  
+  🌤️ 北京：12°C，多云
+  📅 今日：2个会议
+  ⏰ 提醒：15:00 项目review
+  
+  📄 详细简报：https://feishu.cn/docx/F4u4dmtg1oz3qRxiFr7cYkrYnWg
+  ```
 
 ## 特殊情况
 - 如果没有日程：说"今天没有安排，自由支配！"
