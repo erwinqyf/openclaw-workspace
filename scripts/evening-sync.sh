@@ -1,6 +1,6 @@
 #!/bin/bash
-# 晚间同步脚本 v2 - 每天零点执行
-# 功能：GitHub commit + Obsidian 笔记 + Memory 更新 + 索引生成
+# 晚间同步脚本 v3 - 每天零点执行
+# 功能：双仓库推送（workspace 完整备份 + using_log 日记）
 
 set -e
 
@@ -163,21 +163,23 @@ else
     echo "[$TIMESTAMP] ✓ 无变更，跳过 commit"
 fi
 
-# 7. 推送 daily_log.md 到 GitHub（仅日记文件）
-echo "[$TIMESTAMP] 📝 检查是否需要更新 GitHub 日记..."
-DAILY_LOG_GITHUB="$WORKSPACE/daily_log.md"
-if [ -f "$DAILY_LOG_GITHUB" ]; then
-    # 确保文件在 git 跟踪中
-    git add "$DAILY_LOG_GITHUB" 2>/dev/null || true
-    # 如果有变更则提交并推送
-    if ! git diff --cached --quiet "$DAILY_LOG_GITHUB" 2>/dev/null; then
-        git commit -m "📝 更新日记 $DATE" -- "$DAILY_LOG_GITHUB"
-        git push origin master 2>/dev/null && echo "[$TIMESTAMP] ✅ GitHub 日记已更新" || echo "[$TIMESTAMP] ⚠️ GitHub push 失败"
-    else
-        echo "[$TIMESTAMP] ✓ 日记无变更"
-    fi
-else
-    echo "[$TIMESTAMP] ℹ️ daily_log.md 不存在，跳过 GitHub 同步"
-fi
+# 7. 推送到 workspace 仓库（完整备份）
+echo "[$TIMESTAMP] ☁️ 推送到 workspace 仓库..."
+git push workspace master 2>/dev/null && echo "[$TIMESTAMP] ✅ workspace 推送成功" || echo "[$TIMESTAMP] ⚠️ workspace 推送失败"
+
+# 8. 推送到 using_log 仓库（只保留 README.md 作为日记）
+echo "[$TIMESTAMP] 📝 推送到 using_log 仓库..."
+# 使用 subtree 方式只推送 README.md
+# 先创建临时分支
+git checkout -b temp-log-branch 2>/dev/null || git checkout temp-log-branch
+# 只保留 README.md
+git checkout master -- README.md
+git add README.md
+git commit -m "📝 更新日记 $DATE" || echo "[$TIMESTAMP] 无变更"
+git push origin temp-log-branch:master --force 2>/dev/null && echo "[$TIMESTAMP] ✅ using_log 推送成功" || echo "[$TIMESTAMP] ⚠️ using_log 推送失败"
+# 切回 master
+git checkout master
+# 删除临时分支
+git branch -D temp-log-branch 2>/dev/null || true
 
 echo "[$TIMESTAMP] ✨ 晚间同步完成"
